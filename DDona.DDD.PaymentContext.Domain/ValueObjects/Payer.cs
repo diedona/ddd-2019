@@ -8,7 +8,7 @@ namespace DDona.DDD.PaymentContext.Domain.ValueObjects
 {
     public class Payer : ValueObject
     {
-        public Payer(string name, Document document, string address)
+        public Payer(string name, Document document, Address address)
         {
             Name = name;
             Document = document;
@@ -17,6 +17,6 @@ namespace DDona.DDD.PaymentContext.Domain.ValueObjects
 
         public string Name { get; private set; }
         public Document Document { get; private set; }
-        public string Address { get; private set; }
+        public Address Address { get; private set; }
     }
 }
