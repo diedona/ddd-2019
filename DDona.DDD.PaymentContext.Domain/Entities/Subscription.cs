@@ -1,11 +1,12 @@
-﻿using System;
+﻿using DDona.DDD.PaymentContext.Shared.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace DDona.DDD.PaymentContext.Domain.Entities
 {
-    public class Subscription
+    public class Subscription : Entity
     {
         private IList<Payment> _payments;
 

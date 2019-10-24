@@ -1,11 +1,12 @@
 ﻿using DDona.DDD.PaymentContext.Domain.Enums;
+using DDona.DDD.PaymentContext.Shared.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DDona.DDD.PaymentContext.Domain.ValueObjects
 {
-    public class Document
+    public class Document : ValueObject
     {
         public Document(string number, EDocumentType type)
         {

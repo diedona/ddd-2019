@@ -1,4 +1,5 @@
 ﻿using DDona.DDD.PaymentContext.Domain.ValueObjects;
+using DDona.DDD.PaymentContext.Shared.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace DDona.DDD.PaymentContext.Domain.Entities
 {
-    public class Student
+    public class Student : Entity
     {
         private IList<Subscription> _subscriptions;
 

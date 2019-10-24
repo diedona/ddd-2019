@@ -1,12 +1,13 @@
 ﻿using DDona.DDD.PaymentContext.Domain.Interfaces;
 using DDona.DDD.PaymentContext.Domain.ValueObjects;
+using DDona.DDD.PaymentContext.Shared.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DDona.DDD.PaymentContext.Domain.Entities
 {
-    public abstract class Payment : IPayment
+    public abstract class Payment : Entity, IPayment
     {
         protected Payment(DateTime paidDate, DateTime expiredDate, decimal total, decimal totalPaid, Payer payer)
         {

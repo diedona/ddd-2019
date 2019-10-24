@@ -1,10 +1,11 @@
-﻿using System;
+﻿using DDona.DDD.PaymentContext.Shared.ValueObjects;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DDona.DDD.PaymentContext.Domain.ValueObjects
 {
-    public class Name
+    public class Name : ValueObject
     {
         public Name(string firstName, string lastName)
         {

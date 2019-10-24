@@ -1,11 +1,12 @@
 ﻿using DDona.DDD.PaymentContext.Domain.ValueObjects;
+using DDona.DDD.PaymentContext.Shared.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DDona.DDD.PaymentContext.Domain.ValueObjects
 {
-    public class Payer
+    public class Payer : ValueObject
     {
         public Payer(string name, Document document, string address)
         {
