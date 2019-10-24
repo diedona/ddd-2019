@@ -2,14 +2,26 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xunit;
 
 namespace DDona.DDD.PaymentContext.Tests.Entities
 {
     public class StudentTest
     {
-        public void TestStudent()
+        [Fact]
+        public void Should_Fail_Add_Inactive_Subscription()
         {
             var student = new Student("Diego", "Doná", "123123123", "diedona@gmail.com");
+            var subscription = new Subscription(DateTime.Now, DateTime.Now, false);
+            Assert.Throws<Exception>(() => student.AddSubscription(subscription));
+        }
+
+        [Fact]
+        public void Should_Success_Add_Active_Subscription()
+        {
+            var student = new Student("Diego", "Doná", "123123123", "diedona@gmail.com");
+            var subscription = new Subscription(DateTime.Now, DateTime.Now, true);
+            student.AddSubscription(subscription);
         }
     }
 }
