@@ -11,12 +11,11 @@ namespace DDona.DDD.PaymentContext.Domain.Entities
     {
         private IList<Subscription> _subscriptions;
 
-        public Student(Name name, Document document, Email email, Address address)
+        public Student(Name name, Document document, Email email)
         {
             Name = name;
             Document = document;
             Email = email;
-            Address = address;
             _subscriptions = new List<Subscription>();
         }
 

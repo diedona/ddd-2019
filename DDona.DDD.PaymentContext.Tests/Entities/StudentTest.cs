@@ -15,8 +15,7 @@ namespace DDona.DDD.PaymentContext.Tests.Entities
         {
             var student = new Student(new Name("Diego", "Doná"), 
                 new Document("123123123", EDocumentType.CPF), 
-                new Email("diedona@gmail.com"),
-                new Address());
+                new Email("diedona@gmail.com"));
             var subscription = new Subscription(null);
             subscription.SetInactive();
             Assert.Throws<Exception>(() => student.AddSubscription(subscription));
@@ -27,8 +26,7 @@ namespace DDona.DDD.PaymentContext.Tests.Entities
         {
             var student = new Student(new Name("Diego", "Doná"), 
                 new Document("123123123", EDocumentType.CPF), 
-                new Email("diedona@gmail.com"),
-                new Address());
+                new Email("diedona@gmail.com"));
             var subscription = new Subscription(null);
             student.AddSubscription(subscription);
         }
