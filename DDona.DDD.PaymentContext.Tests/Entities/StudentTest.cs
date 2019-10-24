@@ -1,4 +1,6 @@
 ﻿using DDona.DDD.PaymentContext.Domain.Entities;
+using DDona.DDD.PaymentContext.Domain.Enums;
+using DDona.DDD.PaymentContext.Domain.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,7 +13,7 @@ namespace DDona.DDD.PaymentContext.Tests.Entities
         [Fact]
         public void Should_Fail_Add_Inactive_Subscription()
         {
-            var student = new Student("Diego", "Doná", "123123123", "diedona@gmail.com");
+            var student = new Student(new Name("Diego", "Doná"), new Document("123123123", EDocumentType.CPF), "diedona@gmail.com");
             var subscription = new Subscription(null);
             subscription.SetInactive();
             Assert.Throws<Exception>(() => student.AddSubscription(subscription));
@@ -20,7 +22,7 @@ namespace DDona.DDD.PaymentContext.Tests.Entities
         [Fact]
         public void Should_Success_Add_Active_Subscription()
         {
-            var student = new Student("Diego", "Doná", "123123123", "diedona@gmail.com");
+            var student = new Student(new Name("Diego", "Doná"), new Document("123123123", EDocumentType.CPF), "diedona@gmail.com");
             var subscription = new Subscription(null);
             student.AddSubscription(subscription);
         }

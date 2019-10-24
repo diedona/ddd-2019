@@ -1,4 +1,5 @@
 ﻿using DDona.DDD.PaymentContext.Domain.Interfaces;
+using DDona.DDD.PaymentContext.Domain.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,9 +9,13 @@ namespace DDona.DDD.PaymentContext.Domain.Entities
     public class BoletoPayment : Payment, IPaymentWithEmail
     {
         public BoletoPayment(
-            DateTime paidDate, DateTime expiredDate, 
-            decimal total, decimal totalPaid, 
-            Payer payer, string barCode, string email, 
+            DateTime paidDate, 
+            DateTime expiredDate, 
+            decimal total, 
+            decimal totalPaid, 
+            Payer payer, 
+            string barCode, 
+            string email, 
             string boletoNumber) : base(paidDate, expiredDate, total, totalPaid, payer)
         {
             this.BarCode = barCode;
