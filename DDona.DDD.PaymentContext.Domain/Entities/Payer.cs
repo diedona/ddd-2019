@@ -11,6 +11,11 @@ namespace DDona.DDD.PaymentContext.Domain.Entities
             Name = name;
             Document = document;
             Address = address;
+
+            if(!ValidateDocument())
+            {
+                throw new Exception("Invalid document!");
+            }
         }
 
         public string Name { get; private set; }
