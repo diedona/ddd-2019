@@ -9,5 +9,6 @@ namespace DDona.DDD.PaymentContext.Domain.Entities
     {
         public string BarCode { get; set; }
         public string Email { get; set; }
+        public string BoletoNumber { get; set; }
     }
 }

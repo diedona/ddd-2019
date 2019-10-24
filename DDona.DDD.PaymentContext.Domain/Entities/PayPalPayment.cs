@@ -7,6 +7,7 @@ namespace DDona.DDD.PaymentContext.Domain.Entities
 {
     public class PayPalPayment : Payment, IPaymentWithEmail
     {
+        public string TransactionCode { get; set; }
         public string Email { get; set; }
     }
 }
