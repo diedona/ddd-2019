@@ -6,7 +6,17 @@ namespace DDona.DDD.PaymentContext.Domain.Entities
 {
     public abstract class Payer
     {
-        public string Document { get; set; }
-        public string Address { get; set; }
+        protected Payer(string name, string document, string address)
+        {
+            Name = name;
+            Document = document;
+            Address = address;
+        }
+
+        public string Name { get; private set; }
+        public string Document { get; private set; }
+        public string Address { get; private set; }
+
+        protected abstract bool ValidateDocument();
     }
 }
