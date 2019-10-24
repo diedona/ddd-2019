@@ -12,5 +12,6 @@ namespace DDona.DDD.PaymentContext.Domain.Entities
         public DateTime ExpiredDate { get; set; }
         public decimal Total { get; set; }
         public decimal TotalPaid { get; set; }
+        public Payer Payer { get; set; }
     }
 }
