@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DDona.DDD.PaymentContext.Domain.ValueObjects;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,6 @@ namespace DDona.DDD.PaymentContext.Domain.Interfaces
 {
     public interface IPaymentWithEmail : IPayment
     {
-        string Email { get; }
+        Email Email { get; }
     }
 }

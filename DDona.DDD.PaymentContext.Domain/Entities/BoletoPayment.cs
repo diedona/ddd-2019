@@ -15,7 +15,7 @@ namespace DDona.DDD.PaymentContext.Domain.Entities
             decimal totalPaid, 
             Payer payer, 
             string barCode, 
-            string email, 
+            Email email, 
             string boletoNumber) : base(paidDate, expiredDate, total, totalPaid, payer)
         {
             this.BarCode = barCode;
@@ -24,7 +24,7 @@ namespace DDona.DDD.PaymentContext.Domain.Entities
         }
 
         public string BarCode { get; private set; }
-        public string Email { get; private set; }
+        public Email Email { get; private set; }
         public string BoletoNumber { get; private set; }
     }
 }

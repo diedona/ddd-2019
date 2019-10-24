@@ -10,7 +10,7 @@ namespace DDona.DDD.PaymentContext.Domain.Entities
     {
         private IList<Subscription> _subscriptions;
 
-        public Student(Name name, Document document, string email)
+        public Student(Name name, Document document, Email email)
         {
             Name = name;
             Document = document;
@@ -20,7 +20,7 @@ namespace DDona.DDD.PaymentContext.Domain.Entities
 
         public Name Name { get; private set; }
         public Document Document { get; private set; }
-        public string Email { get; private set; }
+        public Email Email { get; private set; }
         public string Address { get; private set; }
         public IReadOnlyCollection<Subscription> Subscriptions
         {
