@@ -7,11 +7,21 @@ namespace DDona.DDD.PaymentContext.Domain.Entities
 {
     public abstract class Payment : IPayment
     {
-        public string Number { get; set; }
-        public DateTime PaidDate { get; set; }
-        public DateTime ExpiredDate { get; set; }
-        public decimal Total { get; set; }
-        public decimal TotalPaid { get; set; }
-        public Payer Payer { get; set; }
+        protected Payment(DateTime paidDate, DateTime expiredDate, decimal total, decimal totalPaid, Payer payer)
+        {
+            Number = Guid.NewGuid().ToString().Replace("-", string.Empty).Substring(0,10).ToUpper();
+            PaidDate = paidDate;
+            ExpiredDate = expiredDate;
+            Total = total;
+            TotalPaid = totalPaid;
+            Payer = payer;
+        }
+
+        public string Number { get; private set; }
+        public DateTime PaidDate { get; private set; }
+        public DateTime ExpiredDate { get; private set; }
+        public decimal Total { get; private set; }
+        public decimal TotalPaid { get; private set; }
+        public Payer Payer { get; private set; }
     }
 }

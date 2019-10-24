@@ -7,8 +7,19 @@ namespace DDona.DDD.PaymentContext.Domain.Entities
 {
     public class BoletoPayment : Payment, IPaymentWithEmail
     {
-        public string BarCode { get; set; }
-        public string Email { get; set; }
-        public string BoletoNumber { get; set; }
+        public BoletoPayment(
+            DateTime paidDate, DateTime expiredDate, 
+            decimal total, decimal totalPaid, 
+            Payer payer, string barCode, string email, 
+            string boletoNumber) : base(paidDate, expiredDate, total, totalPaid, payer)
+        {
+            this.BarCode = barCode;
+            this.Email = email;
+            this.BoletoNumber = boletoNumber;
+        }
+
+        public string BarCode { get; private set; }
+        public string Email { get; private set; }
+        public string BoletoNumber { get; private set; }
     }
 }

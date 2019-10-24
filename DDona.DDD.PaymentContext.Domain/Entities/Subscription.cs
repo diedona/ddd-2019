@@ -27,6 +27,13 @@ namespace DDona.DDD.PaymentContext.Domain.Entities
         public void SetInactive()
         {
             this.Active = false;
+            this.LastUpdateDate = DateTime.Now;
+        }
+
+        public void SetActive()
+        {
+            this.Active = true;
+            this.LastUpdateDate = DateTime.Now;
         }
 
         public void AddPayment(Payment payment)
