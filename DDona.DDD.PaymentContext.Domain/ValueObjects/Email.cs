@@ -1,4 +1,5 @@
 ﻿using DDona.DDD.PaymentContext.Shared.ValueObjects;
+using Flunt.Validations;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,17 +11,13 @@ namespace DDona.DDD.PaymentContext.Domain.ValueObjects
         public Email(string address)
         {
             Address = address;
-            this.ValidateEmailAddress();
+
+            AddNotifications(
+                new Contract()
+                .Requires().IsEmail(Address, "Email.Address", "Invalid Email")
+            );
         }
 
         public string Address { get; private set; }
-
-        private void ValidateEmailAddress()
-        {
-            if(!this.Address.Contains("@"))
-            {
-                this.AddNotification("Address", "Invalid email!");
-            }
-        }
     }
 }
