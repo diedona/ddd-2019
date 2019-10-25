@@ -39,6 +39,11 @@ namespace DDona.DDD.PaymentContext.Domain.Entities
 
         public void AddPayment(Payment payment)
         {
+            if(payment.PaidDate.Date < DateTime.Now.Date)
+            {
+                AddNotification("Subscription.Payments", "Payment can't be in the past!");
+            }
+
             _payments.Add(payment);
         }
     }
