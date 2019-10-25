@@ -30,5 +30,12 @@ namespace DDona.DDD.PaymentContext.Tests.Entities
             var subscription = new Subscription(null);
             student.AddSubscription(subscription);
         }
+
+        [Fact]
+        public void Should_Invalid_First_Name_Empty()
+        {
+            var student = new Student(new Name(string.Empty, "Doná"), new Document("123", EDocumentType.CPF), new Email("diedona@gmail.com"));
+            Assert.False(student.Name.Valid);
+        }
     }
 }
