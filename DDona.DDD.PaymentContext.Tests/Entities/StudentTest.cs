@@ -44,5 +44,12 @@ namespace DDona.DDD.PaymentContext.Tests.Entities
             var student = new Student(new Name("Diego", "Doná"), new Document("123", EDocumentType.CPF), new Email("diedona"));
             Assert.False(student.Valid);
         }
+
+        [Fact]
+        public void Should_Invalid_Document()
+        {
+            var student = new Student(new Name("Diego", "Doná"), new Document("123", EDocumentType.CPF), new Email("diedona@gmail.com"));
+            Assert.False(student.Valid);
+        }
     }
 }
