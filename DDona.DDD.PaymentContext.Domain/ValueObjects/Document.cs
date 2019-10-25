@@ -24,8 +24,7 @@ namespace DDona.DDD.PaymentContext.Domain.ValueObjects
 
         private bool ValidateNumber()
         {
-            // TO-DO:   REAL VALIDATION
-            //          REMOVE IF?
+            // TO-DO:   REMOVE IF?
 
             if (Type == EDocumentType.CNPJ && Number.Length == 14)
             {

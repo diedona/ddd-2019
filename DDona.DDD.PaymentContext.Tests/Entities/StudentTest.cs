@@ -35,21 +35,14 @@ namespace DDona.DDD.PaymentContext.Tests.Entities
         public void Should_Invalid_First_Name_Empty()
         {
             var student = new Student(new Name(string.Empty, "Doná"), new Document("123", EDocumentType.CPF), new Email("diedona@gmail.com"));
-            Assert.False(student.Valid);
+            Assert.False(student.Name.Valid);
         }
 
         [Fact]
         public void Should_Invalid_Email()
         {
             var student = new Student(new Name("Diego", "Doná"), new Document("123", EDocumentType.CPF), new Email("diedona"));
-            Assert.False(student.Valid);
-        }
-
-        [Fact]
-        public void Should_Invalid_Document()
-        {
-            var student = new Student(new Name("Diego", "Doná"), new Document("123", EDocumentType.CPF), new Email("diedona@gmail.com"));
-            Assert.False(student.Valid);
+            Assert.False(student.Email.Valid);
         }
     }
 }
