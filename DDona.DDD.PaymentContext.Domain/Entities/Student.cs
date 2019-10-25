@@ -1,5 +1,6 @@
 ﻿using DDona.DDD.PaymentContext.Domain.ValueObjects;
 using DDona.DDD.PaymentContext.Shared.Entities;
+using Flunt.Validations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,10 +34,10 @@ namespace DDona.DDD.PaymentContext.Domain.Entities
         public void AddSubscription(Subscription subscription)
         {
             // cant add inactive subscription
-            if (!subscription.Active)
-            {
-                throw new Exception("Subscription is inactive!");
-            }
+            AddNotifications(new Contract().Requires()
+                .IsTrue(subscription.Active, "Student.Subscription.Active", "Subscription is not active")
+                .IsGreaterThan(subscription.Payments.Count, 0, "Student.Subscription.Payment", "Subscription has no payment")
+            );
 
             // cancel all current subscriptions
             foreach (var sub in this.Subscriptions)
