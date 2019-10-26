@@ -12,8 +12,4 @@
     <ProjectReference Include="..\DDona.DDD.PaymentContext.Shared\DDona.DDD.PaymentContext.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Handler\" />
-  </ItemGroup>
-
 </Project>
